@@ -3,14 +3,14 @@ services:
     travismysql-app:
         image: travismysql
         external_links:
-            - travismysql-mysql:mysql
+            - travismysql-postgresql:postgresql
         environment:
             - SPRING_PROFILES_ACTIVE=prod
-            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/travismysql?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/travisMysql
             - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
         ports:
             - 8080:8080
-    travismysql-mysql:
+    travismysql-postgresql:
         extends:
-            file: mysql.yml
-            service: travismysql-mysql
+            file: postgresql.yml
+            service: travismysql-postgresql

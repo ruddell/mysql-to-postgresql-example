@@ -1,0 +1,12 @@
+version: '2'
+services:
+    travismysql-postgresql:
+        container_name: travismysql-postgresql
+        image: postgres:9.5.2
+        # volumes:
+        #     - ~/volumes/jhipster/travisMysql/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=travisMysql
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
